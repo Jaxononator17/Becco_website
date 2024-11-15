@@ -3,15 +3,8 @@
 session_start();
 require_once 'auth.php';
 
-// Check if user is logged in
-// a stupid comment 
-if (!is_logged_in()) {
-    header('Location: login.php');
-    exit;
-}
-
 $host = 'localhost'; 
-$dbname = 'books'; 
+$dbname = 'becco'; 
 $user = 'jax'; 
 $pass = 'jax';
 $charset = 'utf8mb4';
@@ -23,10 +16,16 @@ $options = [
     PDO::ATTR_EMULATE_PREPARES   => false,
 ];
 
-
-
-
-
-
+try {
+    $pdo = new PDO($dsn, $user, $pass, $options);
+} catch (PDOException $e) {
+    throw new PDOException($e->getMessage(), (int)$e->getCode());
+}
 
 ?>
+
+<html>
+    <body>
+        <p> Hello Tesing Testing</p>
+    </body>
+</html>
