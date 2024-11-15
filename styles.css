@@ -1,5 +1,10 @@
 body{
-    color: grey;
+    background-color: grey;
+}
+
+p{
+    text-align:center;
+    color: red;
 }
 
 h1{
