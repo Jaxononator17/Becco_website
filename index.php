@@ -24,8 +24,14 @@ try {
 
 ?>
 
-<html>
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+    <title>Becco Church</title>
+    <link rel="stylesheet" href="styles.css">
+    </head>
     <body>
-        <p> Hello Tesing Testing</p>
+        <h1>Becco Church</h1>
+        <p>Welcome to my starter website for my project in web development!</p>
     </body>
 </html>
