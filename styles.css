@@ -1,13 +1,231 @@
-body{
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    background-color: black;
+    font-family: Arial, sans-serif; /* Added for better typography */
+}
+
+.image-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    padding: 20px 0;
+    position: relative;
+    margin-left: 45px;
+}
+
+.inner-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.inner-container img {
+    max-width: 220px;
+    height: auto;
+    display: block;
+    margin: 0 20px;
+    transition: transform 0.3s ease;
+}
+
+.inner-container img:hover {
+    transform: scale(1.1);
+}
+
+.left-buttons,
+.right-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.left-buttons button,
+.right-buttons button {
+    margin: 0 20px;
+    padding: 15px 50px;
+    font-size: 15px;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    border: 2px solid white;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.left-buttons button:hover,
+.right-buttons button:hover {
     background-color: grey;
+    color: black;
+    transform: scale(1.1);
 }
 
-p{
-    text-align:center;
-    color: red;
+.becco-start-end-graphic {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-top: 230px;
+    margin-left: 25%;
+    margin-right: 50%;
+    padding-left: 10px;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    z-index: -1;
+    animation: slideInFromLeft 1s ease-in-out;
 }
 
-h1{
+.becco-start-end-graphic img {
+    max-width: 100%;
+    height: auto;
+}
+
+.announcement-container-img {
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-top: 710px;
+    padding-left: 10px;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    z-index: 1;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.announcement-container-img img {
+    border: 5px solid white;
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.announcement-container-img img:hover {
+    transform: scale(1.05);
+}
+
+.announcement-container-img2 {
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-top: 710px;
+    padding-left: 10px;
+    position: absolute;
+    top: 38px;
+    right: 0;
+    z-index: 1;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.announcement-container-img2 img {
+    border: 5px solid white;
+    width: 75%;
+    height: 98%;
+    transition: transform 0.3s ease;
+}
+
+.announcement-container-img2 img:hover {
+    transform: scale(1.05);
+}
+
+.announcement-text-container {
+    width: 60%; /* Adjusted width for better scaling */
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 720px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1; 
+    animation: fadeIn 2s ease-in-out;
+}
+
+.announcement-text-container h1 {
+    color: white;
+    font-size: 4vw;
     text-align: center;
-    color: red;
+    margin: 0;
+    padding: 10px;
+    white-space: nowrap; /* Prevent text wrapping */
+    transition: color 0.3s ease;
 }
+
+.announcement-text-container h1:hover {
+    color: grey;
+}
+
+.announcement-text-container2 {
+    width: 60%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 800px;
+    z-index: -1;
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+.announcement-text-container2 p {
+    color: white;
+    font-size: 1.1vw;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.announcement-text-container2 p:hover {
+    color: grey;
+}
+
+.footer {
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: absolute;
+    top: 1200px;
+    left: 0;
+    z-index: 1; /* Ensure the footer is above other elements */
+    animation: slideInFromBottom 1s ease-in-out;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 1em;
+}
+
+.footer-line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+
+.facebook-link {
+    text-decoration: none;
+}
+
+.facebook-image {
+    width: 100px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.facebook-link:hover .facebook-image {
+    transform: scale(0.9); /* Adjust the scale factor as needed */
+}
+
