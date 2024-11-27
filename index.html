@@ -1,28 +1,3 @@
-<?php
-
-session_start();
-require_once 'auth.php';
-
-$host = 'localhost'; 
-$dbname = 'becco'; 
-$user = 'jax'; 
-$pass = 'jax';
-$charset = 'utf8mb4';
-
-$dsn = "mysql:host=$host;dbname=$dbname;charset=$charset";
-$options = [
-    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::ATTR_EMULATE_PREPARES   => false,
-];
-
-try {
-    $pdo = new PDO($dsn, $user, $pass, $options);
-} catch (PDOException $e) {
-    throw new PDOException($e->getMessage(), (int)$e->getCode());
-}
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +5,8 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Becco Youth Group</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
 <div class="image-container">
@@ -41,8 +17,8 @@ try {
         </div>
         <img src="309591042_192781796476042_3925392253524476422_n.jpg" alt="Becco YG logo">
         <div class="right-buttons">
-            <button>Photo Gallery</button>
-            <button>About Us</button>
+            <button>Prayer Requests</button>
+            <button>Member Directory</button>
         </div>
     </div>
 </div>
