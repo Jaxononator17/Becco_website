@@ -40,7 +40,17 @@ if (isset($_GET['search']) && !empty($_GET['search'])) {
 
 // Handle form submissions
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if (isset($_POST['delete_id'])) {
+    if (isset($_POST['name']) && isset($_POST['address']) && isset($_POST['phone']) && isset($_POST['birthday'])) {
+        // Insert new entry
+        $name = htmlspecialchars($_POST['name']);
+        $address = htmlspecialchars($_POST['address']);
+        $phone = htmlspecialchars($_POST['phone']);
+        $birthday = htmlspecialchars($_POST['birthday']);
+        
+        $insert_sql = 'INSERT INTO directory (name, address, phone, birthday) VALUES (:name, :address, :phone, :birthday)';
+        $stmt_insert = $pdo->prepare($insert_sql);
+        $stmt_insert->execute(['name' => $name, 'address' => $address, 'phone' => $phone, 'birthday' => $birthday]);
+    } elseif (isset($_POST['delete_id'])) {
         // Delete an entry
         $delete_id = (int) $_POST['delete_id'];
         
@@ -60,7 +70,8 @@ $stmt = $pdo->query($sql);
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Directory Lookup</title>
+    <title>Entry Lookup</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Hero Section -->
@@ -148,6 +159,26 @@ $stmt = $pdo->query($sql);
                 <?php endwhile; ?>
             </tbody>
         </table>
+    </div>
+
+    <!-- Form section with container -->
+    <div class="form-container">
+        <h2>Add a New Entry</h2>
+        <form action="index5.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <br><br>
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+            <br><br>
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" required>
+            <br><br>
+            <label for="birthday">Birthday:</label>
+            <input type="text" id="birthday" name="birthday" required>
+            <br><br>
+            <input type="submit" value="Add Entry">
+        </form>
     </div>
 </body>
 </html>
