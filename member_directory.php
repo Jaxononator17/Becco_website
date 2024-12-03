@@ -76,8 +76,8 @@ $stmt = $pdo->query($sql);
 </head>
 
 <body>
-    <div class="hero-section">
-        <div class="image-container">
+    <div class="image-container">
+        <div class="hero-section">
             <div class="inner-container">
                 <div class="left-buttons">
                     <button>2024 Calendar</button>

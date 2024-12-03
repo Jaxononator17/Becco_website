@@ -1,71 +1,24 @@
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.image-container {
-    width: 100%;
+    margin: 0;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: black;
-    padding: 20px 0;
-    position: relative;
-    margin-left: 45px;
-}
-
-.inner-container {
-    display: flex;
-    align-items: center;
     justify-content: center;
-    position: relative;
-    animation: fadeIn 1s ease-in-out;
-}
-
-.inner-container img {
-    max-width: 100px;
-    height: auto;
-    display: block;
-    margin: 0 20px;
-    transition: transform 0.3s ease;
-}
-
-.inner-container img:hover {
-    transform: scale(1.1);
-}
-
-.left-buttons,
-.right-buttons {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.left-buttons button,
-.right-buttons button {
-    margin: 0 20px;
-    padding: 15px 50px;
-    font-size: 15px;
-    color: white;
+    align-items: flex-start;
+    min-height: 100vh;
     background-color: black;
-    cursor: pointer;
-    border: 2px solid white;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    font-family: Arial, sans-serif;
+    animation: fadeIn 2s ease-in-out;
+    color: white; /* Ensure text is readable */
 }
 
+h1, h2 {
+    color: yellow; /* Ensure headings are readable */
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    color: white; /* Ensure paragraphs are readable */
+}
 
 /* Add a wrapper for the table for better layout control */
 .table-container {
@@ -78,6 +31,8 @@ table {
     width: 100%;
     margin-top: 20px;
     border-collapse: collapse;
+    background-color: #333; /* Dark background for table */
+    color: white; /* Ensure table text is readable */
 }
 
 th, td {
@@ -108,6 +63,7 @@ label {
     display: inline-block;
     width: 70px;
     margin-bottom: 5px;
+    color: white; /* Ensure labels are readable */
 }
 
 input[type="text"] {
@@ -119,10 +75,8 @@ input[type="submit"] {
     margin-top: 10px;
     padding: 5px 15px;
     cursor: pointer;
-}
-
-h1, h2 {
-    margin-bottom: 20px;
+    background-color: yellow; /* Ensure button is visible */
+    color: black; /* Ensure button text is readable */
 }
 
 .search-container {
@@ -162,22 +116,24 @@ h1, h2 {
 }
 
 .hero-section {
-    background-color: #fff;
+    background-color: #333; /* Dark background for hero section */
     padding: 40px 20px;
-    margin: -20px -20px 40px -20px; /* Negative margin to stretch full width */
+    margin: -20px -20px 40px -20px;
+    height: 200px;
     text-align: center;
     border-bottom: 1px solid #ddd;
+    color: white; /* Ensure hero section text is readable */
 }
 
 .hero-title {
     font-size: 2.5em;
-    color: #333;
+    color: yellow; /* Ensure hero title is readable */
     margin-bottom: 15px;
 }
 
 .hero-subtitle {
     font-size: 1.2em;
-    color: #666;
+    color: #ccc; /* Ensure hero subtitle is readable */
     margin-bottom: 30px;
     font-style: italic;
 }
@@ -186,14 +142,9 @@ h1, h2 {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #444; /* Dark background for search section */
     border-radius: 4px;
+    height: 200px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-/* Rest of your existing styles remain unchanged */
-.table-container {
-    width: 100%;
-    overflow: hidden;
-    margin-bottom: 40px;
+    color: white; /* Ensure search section text is readable */
 }
