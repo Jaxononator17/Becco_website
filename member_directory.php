@@ -70,11 +70,26 @@ $stmt = $pdo->query($sql);
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Entry Lookup</title>
+    <title>Member Lookup</title>
     <link rel="stylesheet" href="member.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
     <!-- Hero Section -->
+    <div class="image-container">
+        <div class="inner-container">
+            <div class="left-buttons">
+                <button>2024 Calendar</button>
+                <button>Current Staff</button>
+            </div>
+            <img src="309591042_192781796476042_3925392253524476422_n.jpg" alt="Becco YG logo">
+            <div class="right-buttons">
+                <button>Prayer Requests</button>
+                <a href="member_directory.php"><button>Member Directory</button></a>
+            </div>
+        </div>
+    </div>
+
     <div class="hero-section">
         <h1 class="hero-title">Entry Lookup</h1>
         <p class="hero-subtitle">"Look up an entry that fits your needs"</p>
