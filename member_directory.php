@@ -71,7 +71,7 @@ $stmt = $pdo->query($sql);
 <head>
     <meta charset="UTF-8">
     <title>Entry Lookup</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="member.css">
 </head>
 <body>
     <!-- Hero Section -->
