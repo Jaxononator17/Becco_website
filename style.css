@@ -1,12 +1,19 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 body {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-    background-color: black;
     font-family: Arial, sans-serif;
-    animation: fadeIn 2s ease-in-out;
+    background-color: #f4f4f4;
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .image-container {
@@ -17,7 +24,6 @@ body {
     background-color: black;
     padding: 20px 0;
     position: relative;
-    margin-left: 45px;
 }
 
 .inner-container {
@@ -29,7 +35,7 @@ body {
 }
 
 .inner-container img {
-    max-width: 220px;
+    max-width: 100px;
     height: auto;
     display: block;
     margin: 0 20px;
@@ -164,7 +170,6 @@ h1, h2 {
     background-color: #fff;
     padding: 40px 20px;
     margin: -20px -20px 40px -20px; /* Negative margin to stretch full width */
-    height: 200px;
     text-align: center;
     border-bottom: 1px solid #ddd;
 }
@@ -188,13 +193,5 @@ h1, h2 {
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 4px;
-    height: 200px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-/* Rest of your existing styles remain unchanged */
-.table-container {
-    width: 100%;
-    overflow: hidden;
-    margin-bottom: 40px;
 }
