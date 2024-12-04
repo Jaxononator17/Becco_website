@@ -76,14 +76,22 @@ $stmt = $pdo->query($sql);
 </head>
 
 <body>
-    <div class="hero-section">
-        <button>2024 Calendar</button>
-        <button>Current Staff</button>
-        <a href = "index.html"><img src="309591042_192781796476042_3925392253524476422_n.jpg" alt="Becco YG logo" height="220px"></a>
-        <button>Prayer Requests</button>
-        <a href="member_directory.php"><button>Member Directory</button></a>
+<div class="hero-section">
+<div class="image-container">
+    <div class="inner-container">
+        <div class="left-buttons">
+            <button>2024 Calendar</button>
+            <button>Current Staff</button>
+        </div>
+        <img src="309591042_192781796476042_3925392253524476422_n.jpg" alt="Becco YG logo">
+        <div class="right-buttons">
+            <button>Prayer Requests</button>
+            <a href="member_directory.php"><button>Member Directory</button></a>
+        </div>
     </div>
-    
+</div>
+</div>
+
         <!-- Search moved to hero section -->
         <div class="hero-search">
             <h2>Search for an entry to add to your list</h2>

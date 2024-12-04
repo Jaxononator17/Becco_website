@@ -8,15 +8,72 @@
 }
 
 body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background-color: black;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    animation: fadeIn 2s ease-in-out;
 }
 
+.image-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    padding: 20px 0;
+    position: relative;
+    margin-left: 45px;
+}
 
+.inner-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.inner-container img {
+    max-width: 220px;
+    height: auto;
+    display: block;
+    margin: 0 20px;
+    transition: transform 0.3s ease;
+}
+
+.inner-container img:hover {
+    transform: scale(1.1);
+}
+
+.left-buttons,
+.right-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.left-buttons button,
+.right-buttons button {
+    margin: 0 20px;
+    padding: 15px 50px;
+    font-size: 15px;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    border: 2px solid white;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.left-buttons button:hover,
+.right-buttons button:hover {
+    background-color: grey;
+    color: black;
+    transform: scale(1.1);
+}
 /* Add a wrapper for the table for better layout control */
 .table-container {
     width: 100%;
@@ -109,52 +166,6 @@ h1, h2 {
 
 .form-container {
     margin-top: 40px;
-}
-
-.hero-section {
-    background-color: #fff;
-    padding: 40px 20px;
-    margin: -20px -20px 40px -20px; /* Negative margin to stretch full width */
-    text-align: center;
-    border-bottom: 1px solid #ddd;
-}
-
-.left-buttons,
-.right-buttons {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 0 20px;
-    padding: 15px 50px;
-    font-size: 15px;
-    color: white;
-    background-color: black;
-    cursor: pointer;
-    border: 2px solid white;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-}
-
-
-.hero-title {
-    font-size: 2.5em;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-.hero-subtitle {
-    font-size: 1.2em;
-    color: #666;
-    margin-bottom: 30px;
-    font-style: italic;
-}
-
-.hero-search {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
 /* Rest of your existing styles remain unchanged */
