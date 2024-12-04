@@ -92,6 +92,15 @@ $stmt = $pdo->query($sql);
 $calendar_sql = 'SELECT `id`, `title`, `description`, `event_date` FROM events';
 $calendar_stmt = $pdo->query($calendar_sql);
 
+// Handle calendar event deletion
+if (isset($_POST['delete_event_id'])) {
+    $delete_event_id = (int) $_POST['delete_event_id'];
+    $delete_event_sql = 'DELETE FROM events WHERE id = :id';
+    $stmt_delete_event = $pdo->prepare($delete_event_sql);
+    $stmt_delete_event->execute(['id' => $delete_event_id]);
+}
+
+
 // Get all users
 $users_sql = 'SELECT `id`, `username`, `password` FROM users';
 $users_stmt = $pdo->query($users_sql);
@@ -104,6 +113,153 @@ $users_stmt = $pdo->query($users_sql);
     <title>Admin Page</title>
     <link rel="stylesheet" href="styles_admin.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        /* General Styles */
+    body {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        background-color: black; /* Black background */
+        font-family: Arial, sans-serif;
+        color: #ffff33; /* Neon yellow text */
+    }
+
+    /* Hero Section */
+    .hero-section {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: black; /* Black background */
+        padding: 20px 0;
+        position: relative;
+    }
+
+    .hero-section img {
+        max-width: 220px;
+        height: auto;
+        display: block;
+        margin: 0 20px;
+        transition: transform 0.3s ease;
+    }
+
+    .hero-section img:hover {
+        transform: scale(1.1);
+    }
+
+    /* Admin Container */
+    .admin-container {
+        width: 80%;
+        max-width: 1000px;
+        background-color: #222222; /* Dark grey background */
+        color: #ffff33; /* Neon yellow text */
+        padding: 20px;
+        margin-top: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Ensure spacing between elements */
+    }
+
+    /* Section Headers */
+    .admin-container h2, .admin-container h3 {
+        color: #33ccff; /* Neon blue text */
+        text-align: center;
+    }
+
+    /* Forms */
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    form label {
+        color: #ff33ff; /* Neon purple text */
+        margin-bottom: 5px;
+    }
+
+    form input[type="text"],
+    form input[type="date"],
+    form input[type="password"],
+    form input[type="email"],
+    form textarea,
+    form input[type="submit"] {
+        width: 80%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #333333; /* Dark grey background for inputs */
+        color: #ffff33; /* Neon yellow text */
+    }
+
+    form input[type="submit"] {
+        background-color: #333333; /* Dark grey background for button */
+        color: #ffff33; /* Neon yellow text */
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    form input[type="submit"]:hover {
+        background-color: #555555; /* Darker grey on hover */
+    }
+
+    /* Tables */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    table, th, td {
+        border: 2px solid #33ccff; /* Neon blue border */
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #333333; /* Dark grey background */
+        color: #ff33ff; /* Neon purple text */
+    }
+
+    td {
+        background-color: #222222; /* Slightly lighter grey background */
+        color: #ffff33; /* Neon yellow text */
+    }
+
+    /* Buttons */
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        color: white;
+        background-color: black;
+        border: 2px solid white;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #555555; 
+        color: #ffff33; 
+        transform: scale(1.1);
+    }
+
+    .error {
+        color: red;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    </style>
 </head>
 
 <body>
@@ -279,6 +435,7 @@ $users_stmt = $pdo->query($users_sql);
                 <th>Title</th>
                 <th>Description</th>
                 <th>Event Date</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -288,6 +445,12 @@ $users_stmt = $pdo->query($users_sql);
                 <td><?php echo htmlspecialchars($row['title']); ?></td>
                 <td><?php echo htmlspecialchars($row['description']); ?></td>
                 <td><?php echo htmlspecialchars($row['event_date']); ?></td>
+                <td>
+                    <form action="admin.php" method="post" style="display:inline;">
+                        <input type="hidden" name="delete_event_id" value="<?php echo $row['id']; ?>">
+                        <input type="submit" value="Delete">
+                    </form>
+                </td>
             </tr>
             <?php endwhile; ?>
         </tbody>
@@ -295,3 +458,4 @@ $users_stmt = $pdo->query($users_sql);
 </div>
 </body>
 </html>
+
