@@ -1,12 +1,5 @@
 <?php
 session_start();
-//require_once 'auth_admin.php';
-
-// Check if admin is logged in
-//if (!is_admin_logged_in()) {
-   // header('Location: admin_login.php');
-    //exit;
-//}
 
 $host = 'localhost'; 
 $dbname = 'becco'; 
