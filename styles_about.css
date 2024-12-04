@@ -1,0 +1,142 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: black; /* Black background */
+    font-family: Arial, sans-serif;
+}
+
+.about-section {
+    width: 80%;
+    max-width: 800px;
+    background-color: black; /* Black background */
+    color: #ffff33; /* Neon yellow text */
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+    color: #ff33ff; /* Neon purple text */
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #33ccff; /* Neon blue text */
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #333333; /* Dark grey background for inputs */
+    color: #ffff33; /* Neon yellow text */
+}
+
+.contact-form input[type="submit"] {
+    background-color: #333333; /* Dark grey background for button */
+    color: #ffff33; /* Neon yellow text */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form input[type="submit"]:hover {
+    background-color: #555555; /* Darker grey on hover */
+}
+
+footer {
+    width: 100%;
+    background-color: black; /* Black background */
+    color: #33ccff; /* Neon blue text */
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.image-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black; /* Black background */
+    padding: 20px 0;
+    position: relative;
+    margin-left: 45px;
+    color: #ffff33; /* Neon yellow text */
+}
+
+.inner-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    animation: fadeIn 1s ease-in-out;
+    color: #ff33ff; /* Neon purple text */
+}
+
+.inner-container img {
+    max-width: 220px;
+    height: auto;
+    display: block;
+    margin: 0 20px;
+    transition: transform 0.3s ease;
+}
+
+.inner-container img:hover {
+    transform: scale(1.1);
+}
+
+.left-buttons,
+.right-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.left-buttons button,
+.right-buttons button {
+    margin: 0 20px;
+    padding: 15px 50px;
+    font-size: 15px;
+    color: #ffff33; /* Neon yellow text */
+    background-color: #333333; /* Dark grey background for buttons */
+    cursor: pointer;
+    border: 2px solid #ffff33; /* Neon yellow border */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.left-buttons button:hover,
+.right-buttons button:hover {
+    background-color: #555555; /* Darker grey on hover */
+    color: #ffff33; /* Neon yellow text */
+    transform: scale(1.1);
+}
+
+.becco-start-end-graphic {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-top: 230px;
+    margin-left: 25%;
+    margin-right: 50%;
+    padding-left: 10px;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    z-index: -1;
+    animation: slideInFromLeft 1s ease-in-out;
+}
+
+.becco-start-end-graphic img {
+    max-width: 100%;
+    height: auto;
+}

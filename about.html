@@ -3,26 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Becco Youth Group</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>About Us - Becco Youth Group</title>
+    <link rel="stylesheet" href="styles_about.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-<div class="image-container">
-    <div class="inner-container">
-        <div class="left-buttons">
-            <button>2024 Calendar</button>
-            <button>Current Staff</button>
-        </div>
-        <img src="309591042_192781796476042_3925392253524476422_n.jpg" alt="Becco YG logo">
-        <div class="right-buttons">
-            <a href = "about.html"><button>About Us</button></a>
-            <a href="member_directory.php"><button>Member Directory</button></a>
+    <div class="image-container">
+        <div class="inner-container">
+            <div class="left-buttons">
+                <button>2024 Calendar</button>
+                <button>Current Staff</button>
+            </div>
+            <img src="309591042_192781796476042_3925392253524476422_n.jpg" alt="Becco YG logo">
+            <div class="right-buttons">
+                <a href = "about.html"><button>About Us</button></a>
+                <a href="member_directory.php"><button>Member Directory</button></a>
+            </div>
         </div>
     </div>
+    <div class ="becco-start-end-graphic">
+        <img src="GLOW.jpg" alt="Becco Glow Banner">
+    </div>
+
+<div class="about-section">
+    <h1>About Us</h1>
+    <p>Welcome to Becco Youth Group! We are dedicated to fostering community and personal growth.</p>
+    <!-- Include the form here -->
+    <div class="contact-form">
+        <h2>Contact Us</h2>
+        <form action="submit_form.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+        
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+        
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+        
+            <input type="submit" value="Submit">
+        </form>
+    </div>
 </div>
-<div class ="becco-start-end-graphic">
-    <img src="GLOW.jpg" alt="Becco Glow Banner">
-</div>
+
+<!-- Include the footer at the bottom -->
+<footer>
+    <p>&copy; 2024 Becco Youth Group. All rights reserved.</p>
+</footer>
 </body>
 </html>
