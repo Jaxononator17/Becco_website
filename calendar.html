@@ -3,29 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Becco Youth Group</title>
-    <link rel="stylesheet" href="styles_about.css">
+    <title>2024 Calendar - Becco Youth Group</title>
+    <link rel="stylesheet" href="styles_calendar.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
 <div class="image-container">
-    <div class="image-container">
-        <div class="inner-container">
-            <div class="left-buttons">
-                <a href = "calendar.html"><button>2024 Calendar</button></a>
-                <a href = "current_staff.html"><button>Current Staff</button></a>
-            </div>
-            <a href = "index.html"><img src="309591042_192781796476042_3925392253524476422_n.jpg" alt="Becco YG logo"></a>
-            <div class="right-buttons">
-                <a href = "about.html"><button>About Us</button></a>
-                <a href="member_directory.php"><button>Member Directory</button></a>
-            </div>
+    <div class="inner-container">
+        <div class="left-buttons">
+            <a href="calendar.html"><button>2024 Calendar</button></a>
+            <a href="current_staff.html"><button>Current Staff</button></a>
+        </div>
+        <a href="index.html"><img src="309591042_192781796476042_3925392253524476422_n.jpg" alt="Becco YG logo"></a>
+        <div class="right-buttons">
+            <a href="about.html"><button>About Us</button></a>
+            <a href="member_directory.php"><button>Member Directory</button></a>
         </div>
     </div>
 </div>
 
-<div class ="becco-start-end-graphic">
-    <img src="GLOW.jpg" alt="Becco Glow Banner">
+<div class="calendar-section">
+    <h1 style="color: #33ccff">2024 Calendar</h1>
+    <div id="calendar"></div>
 </div>
+
+<footer>
+    <p>&copy; 2024 Becco Youth Group. All rights reserved.</p>
+</footer>
 </body>
 </html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch('fetch_events.php')
+            .then(response => response.json())
+            .then(events => {
+                const calendar = document.getElementById('calendar');
+                events.forEach(event => {
+                    const eventElement = document.createElement('div');
+                    eventElement.classList.add('event');
+                    eventElement.innerHTML = `<h3>${event.title}</h3><p>${event.description}</p><p>${event.event_date}</p>`;
+                    calendar.appendChild(eventElement);
+                });
+            });
+    });
+    </script>
+    
