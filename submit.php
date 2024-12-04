@@ -27,6 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($conn->query($sql) === TRUE) {
         echo "<h2>Thank you, $name!</h2>";
         echo "<p>Your message has been received. We'll get back to you at $email.</p>";
+        echo"<a href = index.html>Home</a>";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
