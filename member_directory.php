@@ -123,7 +123,7 @@ $stmt = $pdo->query($sql);
                                     <td><?php echo htmlspecialchars($row['phone']); ?></td>
                                     <td><?php echo htmlspecialchars($row['birthday']); ?></td>
                                     <td>
-                                        <form action="index5.php" method="post" style="display:inline;">
+                                        <form action="member_direction.php" method="post" style="display:inline;">
                                             <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
                                             <input type="submit" value="Delete">
                                         </form>
@@ -163,7 +163,7 @@ $stmt = $pdo->query($sql);
                     <td><?php echo htmlspecialchars($row['phone']); ?></td>
                     <td><?php echo htmlspecialchars($row['birthday']); ?></td>
                     <td>
-                        <form action="index5.php" method="post" style="display:inline;">
+                        <form action="member_directory.php" method="post" style="display:inline;">
                             <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
                             <input type="submit" value="Delete">
                         </form>
@@ -177,7 +177,7 @@ $stmt = $pdo->query($sql);
     <!-- Form section with container -->
     <div class="form-container">
         <h2>Add a New Entry</h2>
-        <form action="index5.php" method="post">
+        <form action="member_directory.php" method="post">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
             <br><br>
